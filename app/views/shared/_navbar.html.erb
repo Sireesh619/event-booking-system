@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+    <nav style="display: flex; justify-content: space-between; padding: 10px; background-color: #343a40; align-items: center;">
+        <div style="display: flex; gap: 20px;">
+            <%= link_to "Home", root_path, style: "text-decoration: none; color: #ffffff;" %>
+            <%= link_to "Bookings", api_v1_bookings_path, style: "text-decoration: none; color: #ffffff;" %>
+            <%= link_to "Edit Profile", edit_user_registration_path, style: "text-decoration: none; color: #ffffff;" %>
+        </div>
+        <div>
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, style: "text-decoration: none; color: #dc3545;" %>
+        </div>
+    </nav>
+<% end %>

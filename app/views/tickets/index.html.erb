@@ -1,0 +1,23 @@
+<h1>Tickets</h1>
+
+<% if current_user.event_organizer? %>
+  <%= link_to 'New Ticket', new_ticket_path, class: 'btn btn-primary' %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.ticket_type %></td>
+        <td><%= number_to_currency(ticket.price) %></td>
+        <td><%= ticket.availability ? 'Available' : 'Sold Out' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

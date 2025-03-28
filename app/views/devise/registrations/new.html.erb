@@ -1,0 +1,45 @@
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #343a40;">
+  <div style="background: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px;">
+    <h2 style="text-align: center; margin-bottom: 20px; color: #343a40;">Sign up</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field" style="margin-bottom: 15px;">
+        <%= f.label :email, style: "display: block; margin-bottom: 5px; color: #495057;" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", style: "width: 95%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px;" %>
+      </div>
+
+      <div class="field" style="margin-bottom: 15px;">
+        <%= f.label :password, style: "display: block; margin-bottom: 5px; color: #495057;" %>
+        <% if @minimum_password_length %>
+          <em style="color: #6c757d;">(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", style: "width: 95%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px;" %>
+      </div>
+
+      <div class="field" style="margin-bottom: 15px;">
+        <%= f.label :password_confirmation, style: "display: block; margin-bottom: 5px; color: #495057;" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", style: "width: 95%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px;" %>
+      </div>
+
+      <div class="field" style="margin-bottom: 15px;">
+        <%= f.label :phone_number, style: "display: block; margin-bottom: 5px; color: #495057;" %>
+        <%= f.text_field :phone_number, style: "width: 95%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px;" %>
+      </div>
+
+      <div class="field" style="margin-bottom: 15px;">
+        <%= f.label :role, style: "display: block; margin-bottom: 5px; color: #495057;" %>
+        <%= f.select :role, [['Customer', 'Customer'], ['Event Organizer', 'Event_Organizer']], {}, style: "width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px;" %>
+      </div>
+
+      <div class="actions" style="text-align: center;">
+        <%= f.submit "Sign up", style: "background-color: #007bff; color: #ffffff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;" %>
+      </div>
+    <% end %>
+
+    <div style="text-align: center; margin-top: 15px;">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="events-container">
+  <h1 class="events-title">All Events</h1>
+
+  <div class="events-table-wrapper">
+    <table class="events-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @events.each do |event| %>
+          <tr>
+            <td><%= event.name %></td>
+            <td><%= event.date.strftime('%B %d, %Y') %></td>
+            <td><%= event.location %></td>
+            <td>
+              <%= link_to "Book Tickets", 
+                          new_booking_path(event_id: event.id), 
+                          class: "btn btn-primary" %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<h1>Book Tickets for </h1>
+
+<%= form_with model: @booking, url: api_v1_bookings_path do |f| %>
+  <div class="field">
+    <%= f.label :number_of_tickets, "Number of Tickets" %>
+    <%= f.number_field :number_of_tickets, min: 1 %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Book Tickets" %>
+  </div>
+<% end %>

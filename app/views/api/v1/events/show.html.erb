@@ -1,0 +1,9 @@
+<h1>Event Details</h1>
+
+<p><strong>Name:</strong> <%= @event.name %></p>
+<p><strong>Date:</strong> <%= @event.date.strftime('%B %d, %Y') %></p>
+<p><strong>Venue:</strong> <%= @event.venue %></p>
+
+<%= link_to 'Edit Event', edit_api_v1_event_path(@event), class: 'btn btn-warning' %>
+<%= link_to 'Delete Event', api_v1_delete_api_v1_event_path(@event), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+<%= link_to 'Back to Events', api_v1_events_path, class: 'btn btn-secondary' %>

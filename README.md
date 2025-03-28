@@ -1,24 +1,37 @@
-# README
+# Event Booking System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README provides instructions to set up and run the Event Booking System application.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+- **Ruby**: Ruby version installed on my system is 2.7.6
+- **Rails**: Rails version 7.1 or higher.
 
-* System dependencies
+## Setup Instructions
 
-* Configuration
+ **Install Required Gems**:
+   Run the following commands to install the necessary gems:
+   ```sh
+   gem install zeitwerk -v 2.6.18
+   gem install nokogiri -v 1.15.7
+   gem install securerandom -v 0.3.2
+   gem install activesupport -v 7.1
+   gem install net-imap -v 0.4.19
+   gem install rails -v 7.1
 
-* Database creation
+## Database Setup
+  Run the following commands to set up the database:
+  rails db:create
+  rails db:migrate
 
-* Database initialization
+## Bundle gems
+  Run the follwing commad:
+  bundle install
 
-* How to run the test suite
+## Running Sidekiq
+  Run the following command:
+  bundle exec sidekiq
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Running the Application
+  Start the Rails server with:
+  rails server
